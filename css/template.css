@@ -1,0 +1,11 @@
+.social-media-icons{
+    background: red; 
+    height: 30px;   
+}
+.search{
+    background: yellow; 
+    height: 30px;   
+}
+.main-menu ul li, .footer-menu ul li {
+    display: inline;
+}
