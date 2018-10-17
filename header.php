@@ -9,8 +9,6 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <p>Meu Primeiro site Wordpress!</p>
-
     <header>
         <section class="top-bar">
             <div class="container">
@@ -33,7 +31,5 @@
                     </nav>
                 </div>
             </div>
-
-
         </section>    
     </header>
