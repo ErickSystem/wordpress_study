@@ -47,29 +47,51 @@
                     <div class="row">
                         <?php get_sidebar( 'home' ); ?>
                         <div class="news col-md-8">
-                            <?php
-                            // Se houver algum post
-                            if ( have_posts() ):
-                                // Enquanto houver posts, mostre-nos para nós
-                                while( have_posts() ): the_post();
-                            ?>
-                            <p>Conteúdo da página home.php</p>
-                            <article>
-                                <h2><?php the_title(); ?></h2>
-                                <p>Published in <?php echo get_the_date(); ?> by 
-                                    <?php the_author_posts_link(); ?>
-                                </p>
-                                <p>Categories: <?php the_category(' '); ?></p>
-                                <p><?php the_tags('Tags: ', ', '); ?></p>
-                                <?php the_content(); ?>
-                            </article>
-                            <?php
-                                endwhile;
-                            else:
-                            ?>
-                            <p>There's nothing yet to be displayed... </p>
-                            
-                            <?php endif; ?>
+                            <div class="container">
+                                <h1>Latest News</h1>
+                                <div class="row">
+                                    <?php
+                                    $featured = new WP_Query(
+                                         'post_type=post&posts_per_page=1&cat=5,4' 
+                                        );
+                                    if( $featured->have_posts() ):
+                                        while ($featured->have_posts() ): $featured->the_post();
+                                    ?>
+
+                                    <div class="col-12">
+                                        <?php get_template_part( 'template-parts/content', 'featured' ); ?>
+                                    </div>
+                                        
+                                    <?php
+                                        endwhile;
+                                        wp_reset_postdata();
+                                    endif;
+
+                                    // Segundo loop
+                                    $args = array(
+                                        'post_type' => 'post',
+                                        'posts_per_page' => 2,
+                                        'category__not_in' => array( 14 ),
+                                        'category__in' => array( 3, 6 ),
+                                        'offset' => 1
+
+                                    );
+                                    $secondary = new WP_Query( $args );
+                                    if( $secondary->have_posts() ):
+                                       while ($secondary->have_posts() ): $secondary->the_post();
+                                    ?>
+
+                                    <div class="col-sm-6">
+                                       <?php get_template_part( 'template-parts/content', 'secondary' ); ?>
+                                    </div>
+                                       
+                                    <?php
+                                       endwhile;
+                                       wp_reset_postdata();
+                                    endif;
+                                    ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

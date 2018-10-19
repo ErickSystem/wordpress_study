@@ -2,6 +2,25 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:400,900');
 @import url('https://fonts.googleapis.com/css?family=Lato:400,900');
 
+#permalink-h2 {
+    color: blue;
+    text-decoration-color: #b9121b;
+}
+.permalink {
+    outline: none;
+    text-decoration: none;
+    padding: 1px 1px 0;
+}
+.permalink:link {
+    color: #332e2e;
+}
+.permalink:visited {
+    color: #060606;
+}
+.permalink:active {
+    color: #CDFEAA;
+}
+
 body{ font: 16px/1.6 'Oswald', sans-serif;  }
 body p{ font: 16px/1.6 'Lato', sans-serif; }
 h1{ font-size: 28px; margin: 15px 0 15px; }
@@ -39,6 +58,15 @@ h4{ font-size: 18px; margin-top: 0; }
 /* Middle Area - Sidebar */
 .sidebar{ background: #f6e497; padding: 20px; margin: 0 0 30px;  }
 
+/* Middle Area - Featured News */
+.home .news h1{ color: #4c1b1b; text-transform: uppercase; font-size: 38px; font-weight: bold; }
+.home .news .format-image h2, .home .news .format-video h2, .home .news .format-standard h2 { color: #000; background: transparent; display: inline-block; padding: 10px 0 5px; font-weight: bold; } 
+.home .news .featured h2{ font-size: 35px; }
+.home .news .secondary h2{ font-size: 20px; }
+.home .news .featured h2 a, .home .news .secondary h2 a{ color: #000; }
+.home .news .meta-info p{ font-weight: bold; margin-bottom: 0; }
+.home .news span, .news span a{ color: #9c9c9c; font-weight: normal; margin: 0 2px 0 0; }
+
 /* Footer */
 footer{ background: #000; padding: 15px 0; color: #fcfae1; }
 
@@ -50,12 +78,16 @@ footer{ background: #000; padding: 15px 0; color: #fcfae1; }
 .footer-menu ul  li.current-menu-item a{ color:#e58888; }
 
 /* Blog */
-.wp-post-image{ float: left; margin: 0 15px 10px 0; }
-.format-image h2 { color: #fff; background: #717171; padding: 15px; }
-.format-video h2 { color: #fff; background: #211e1e; padding: 15px; }
-.format-standard h2 { color: #444; background: #d2d2d2; padding: 15px; }
+.wp-post-image{ float: left; margin: 0 15px 10px 0; } 
+embed, iframe, object, video { margin-bottom: 1.6em; max-width: 100%; vertical-align: middle; } /* Deixa os vídeos responsivos */
 .blog article{ display: inline-block; margin: 0 0 30px; width: 100%; }
 .blog article h2{ margin-bottom: 15px; }
+.blog article h2 a{ color: #FFFFFF; }
 .blog article p > img{ width: 100%; height: auto; }
 .blog .meta-info p{ line-height: 1em; font-weight: bold; }
 .blog .meta-info p > a{ color: #9d9d9d; font-weight: normal; }
+
+/* Post Formats */
+.format-image h2 { color: #fff; background: #717171; padding: 15px; }
+.format-video h2 { color: #fff; background: #cac488; padding: 15px; }
+.format-standard h2 { color: #444; background: #d2d2d2; padding: 15px; }
