@@ -2,25 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:400,900');
 @import url('https://fonts.googleapis.com/css?family=Lato:400,900');
 
-#permalink-h2 {
-    color: blue;
-    text-decoration-color: #b9121b;
-}
-.permalink {
-    outline: none;
-    text-decoration: none;
-    padding: 1px 1px 0;
-}
-.permalink:link {
-    color: #332e2e;
-}
-.permalink:visited {
-    color: #060606;
-}
-.permalink:active {
-    color: #CDFEAA;
-}
-
 body{ font: 16px/1.6 'Oswald', sans-serif;  }
 body p{ font: 16px/1.6 'Lato', sans-serif; }
 h1{ font-size: 28px; margin: 15px 0 15px; }
@@ -89,5 +70,5 @@ embed, iframe, object, video { margin-bottom: 1.6em; max-width: 100%; vertical-a
 
 /* Post Formats */
 .format-image h2 { color: #fff; background: #717171; padding: 15px; }
-.format-video h2 { color: #fff; background: #cac488; padding: 15px; }
+.format-video h2 { color: #fff; background: #211e1e; padding: 15px; }
 .format-standard h2 { color: #444; background: #d2d2d2; padding: 15px; }

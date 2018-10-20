@@ -1,7 +1,7 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="copy-right">
+            <div class="copy-right col-sm-7 col-4">
                 <p>Copyright</p>
                 <p>Development by Erick Henrique</p>
             </div>
