@@ -6,23 +6,23 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_section( 
 		'sec_copyright', array(
-			'title' => _('Copyright', 'wpcurso'),
-			'description' => _('Copyright Section', 'wpcurso')
+			'title' => __('Copyright', 'wpcurso'),
+			'description' => __('Copyright Section', 'wpcurso')
 		)
 	);
 
 	$wp_customize->add_setting(
 		'set_copyright', array(
 			'type' => 'theme_mod',
-			'default' => _('Copyright X - All rights reserved', 'wpcurso'),
+			'default' => __('Copyright X - All rights reserved', 'wpcurso'),
 			'sanitize_callback' => 'wp_filter_nohtml_kses'
 		)
 	);
 
 	$wp_customize->add_control(
 		'set_copyright', array(
-			'label' => _('Copyright', 'wpcurso'),
-			'description' => _('Choose whether to show the Services section or not', 'wpcurso'),
+			'label' => __('Copyright', 'wpcurso'),
+			'description' => __('Choose whether to show the Services section or not', 'wpcurso'),
 			'section' => 'sec_copyright',
 			'type' => 'text'
 		)
@@ -32,8 +32,8 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_section( 
 		'sec_map', array(
-			'title' => _('Map', 'wpcurso'),
-			'description' => _('Map Section', 'wpcurso')
+			'title' => __('Map', 'wpcurso'),
+			'description' => __('Map Section', 'wpcurso')
 		)
 	);	
 
@@ -49,9 +49,9 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_control(
 		'set_map_apikey', array(
-			'label' => _('API Key', 'wpcurso'),
+			'label' => __('API Key', 'wpcurso'),
 			'description' => sprintf(
-				_('Get your key <a target="_blank" href="%s">here</a>', 'wpcurso'),
+				__('Get your key <a target="_blank" href="%s">here</a>', 'wpcurso'),
 				'https://console.developers.google.com/flows/enableapi?apiid=maps_backend'),
 			'section' => 'sec_map',
 			'type' => 'text'
@@ -70,8 +70,8 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_control(
 		'set_map_address', array(
-			'label' => _('Type your address here', 'wpcurso'),
-			'description' => _('No special characters allowed', 'wpcurso'),
+			'label' => __('Type your address here', 'wpcurso'),
+			'description' => __('No special characters allowed', 'wpcurso'),
 			'section' => 'sec_map',
 			'type' => 'textarea'
 		)
@@ -81,8 +81,8 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_section( 
 		'sec_slider', array(
-			'title' => _('Slider', 'wpcurso'),
-			'description' => _('Slider Section', 'wpcurso')
+			'title' => __('Slider', 'wpcurso'),
+			'description' => __('Slider Section', 'wpcurso')
 		)
 	);
 
@@ -98,15 +98,15 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_control(
 		'set_slider_option', array(
-			'label' => _('Choose your design type here', 'wpcurso'),
-			'description' => _('Choose your design type', 'wpcurso'),
+			'label' => __('Choose your design type here', 'wpcurso'),
+			'description' => __('Choose your design type', 'wpcurso'),
 			'section' => 'sec_slider',
 			'type' => 'select',
 			'choices' => array(
-				'1' => _('Design Type 1', 'wpcurso'),
-				'2' => _('Design Type 2', 'wpcurso'),
-				'3' => _('Design Type 3', 'wpcurso'),
-				'4' => _('Design Type 4', 'wpcurso')
+				'1' => __('Design Type 1', 'wpcurso'),
+				'2' => __('Design Type 2', 'wpcurso'),
+				'3' => __('Design Type 3', 'wpcurso'),
+				'4' => __('Design Type 4', 'wpcurso')
 			)
 		)
 	);	
@@ -123,8 +123,8 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_control(
 		'set_slider_limit', array(
-			'label' => _('Number of posts to display', 'wpcurso'),
-			'description' => _('Choose the number of posts to be displayed', 'wpcurso'),
+			'label' => __('Number of posts to display', 'wpcurso'),
+			'description' => __('Choose the number of posts to be displayed', 'wpcurso'),
 			'section' => 'sec_slider',
 			'type' => 'number'
 		)
@@ -134,8 +134,8 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_section( 
 		'sec_loops', array(
-			'title' => _('Front Page Loops', 'wpcurso'),
-			'description' => _('Controls the loops in front page', 'wpcurso')
+			'title' => __('Front Page Loops', 'wpcurso'),
+			'description' => __('Controls the loops in front page', 'wpcurso')
 		)
 	);
 
@@ -149,8 +149,8 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_control(
 		'set_loop1_categories', array(
-			'label' => _('Categories to include in first loop', 'wpcurso'),
-			'description' => _('Choose the categories to include in first loop. Use commas to sepate the categories. For example 4,5,8,20', 'wpcurso'),
+			'label' => __('Categories to include in first loop', 'wpcurso'),
+			'description' => __('Choose the categories to include in first loop. Use commas to sepate the categories. For example 4,5,8,20', 'wpcurso'),
 			'section' => 'sec_loops',
 			'type' => 'text'
 		)
@@ -166,8 +166,8 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_control(
 		'set_loop2_posts_per_page', array(
-			'label' => _('Number of posts to display in second loop', 'wpcurso'),
-			'description' => _('Choose the number of posts to display in second loop', 'wpcurso'),
+			'label' => __('Number of posts to display in second loop', 'wpcurso'),
+			'description' => __('Choose the number of posts to display in second loop', 'wpcurso'),
 			'section' => 'sec_loops',
 			'type' => 'number'
 		)
@@ -184,8 +184,8 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_control(
 		'set_loop2_categories_to_exclude', array(
-			'label' => _('Categories to exclude in second loop', 'wpcurso'),
-			'description' => _('Choose the categories to exclude in second loop. Use commas to sepate the categories. For example 4,5,8,20', 'wpcurso'),
+			'label' => __('Categories to exclude in second loop', 'wpcurso'),
+			'description' => __('Choose the categories to exclude in second loop. Use commas to sepate the categories. For example 4,5,8,20', 'wpcurso'),
 			'section' => 'sec_loops',
 			'type' => 'text'
 		)
@@ -202,8 +202,8 @@ function wpcurso_customizer( $wp_customize ){
 
 	$wp_customize->add_control(
 		'set_loop2_categories_to_include', array(
-			'label' => _('Categories to include in second loop', 'wpcurso'),
-			'description' => _('Choose the categories to include in second loop. Use commas to sepate the categories. For example 4,5,8,20', 'wpcurso'),
+			'label' => __('Categories to include in second loop', 'wpcurso'),
+			'description' => __('Choose the categories to include in second loop. Use commas to sepate the categories. For example 4,5,8,20', 'wpcurso'),
 			'section' => 'sec_loops',
 			'type' => 'text'
 		)
