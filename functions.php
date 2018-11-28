@@ -1,5 +1,8 @@
 <?php
 
+// requerendo o arquivo do Customizer
+require get_template_directory() . '/inc/customizer.php';
+
 function load_scripts(){
     /*
          Utilizado para chamar as folhas de estilo 
@@ -41,6 +44,13 @@ function wpcourse_config(){
     add_theme_support( 'custom-header', $args);
     add_theme_support( 'post-thumbnails');
     add_theme_support( 'post-formats', array( 'video', 'image' ));
+    add_theme_support( 'title-tag' );
+    add_theme_support( 'custom-logo', array( 'height' => 110, 'width' => 200 ) );
+
+    // Habilitando suporte à tradução
+    $textdomain = 'wpcurso';
+    load_theme_textdomain( $textdomain, get_stylesheet_directory() . '/languages/' );
+    load_theme_textdomain( $textdomain, get_template_directory() . '/languages/' );
 }
 
 add_action( 'after_setup_theme', 'wpcourse_config', 0 );
@@ -96,6 +106,17 @@ function wpcourse_sidebars(){
             'name' => 'Services 3',
             'id' => 'services-3',
             'description' => 'Third Services Area',
+            'before_widget' => '<div class="widget-wapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>'
+        )
+    );
+    register_sidebar(
+        array(
+            'name' => 'Social Icons',
+            'id' => 'social-media',
+            'description' => 'Place your media icons here',
             'before_widget' => '<div class="widget-wapper">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title">',
